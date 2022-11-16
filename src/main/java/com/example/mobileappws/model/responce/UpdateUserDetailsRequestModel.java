@@ -1,12 +1,16 @@
 package com.example.mobileappws.model.responce;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-public class UserRest {
+public class UpdateUserDetailsRequestModel {
+    @NotNull(message = "First name cannot be null")
+    @Size(min = 2, message = "First name must not be less than 2 characters")
     private String firstName;
+    @NotNull(message = "Last name cannot be null")
+    @Size(min = 2, message = "First name must not be less than 2 characters")
     private String lastName;
-    private String email;
-    private String userId;
 
     public String getFirstName() {
         return firstName;
@@ -24,22 +28,9 @@ public class UserRest {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public UserRest() {
+    public UpdateUserDetailsRequestModel() {
     }
 }
+
+
